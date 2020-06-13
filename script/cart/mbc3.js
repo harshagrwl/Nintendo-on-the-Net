@@ -1,14 +1,7 @@
-/**
- * This file is part of the JavaScript GameBoy emulator
- * Licensing information can be found in the LICENSE file
- * (C) 2013 Licker Nandor. All rights reserved.
- */
 
 ( function( emu )
 {
-  /**
-   * MBC3 cartridge
-   */
+  
   emu.MBC3 = function( rom )
   {
     this.rom = rom;
@@ -25,9 +18,7 @@
     this.load_banks( );
   }
 
-  /**
-   * Loads RAM banks from local storage
-   */
+  
   emu.MBC3.prototype.load_banks = function( )
   {
     var banks = JSON.parse( localStorage.getItem( this.ram_key ) );
@@ -55,17 +46,13 @@
     }
   }
 
-  /**
-   * Saves RAM banks to local storage
-   */
+  
   emu.MBC3.prototype.save_banks = function( )
   {
     localStorage.setItem( this.ram_key, JSON.stringify( this.ram_banks ) );
   }
 
-  /**
-   * MBC3 control register write
-   */
+  
   emu.MBC3.prototype.set_byte = function( addr, val )
   {
     switch ( addr & 0xF000 )
@@ -127,9 +114,7 @@
     }
   }
 
-  /**
-   * MBC3 control register read
-   */
+  
   emu.MBC3.prototype.get_byte = function( addr )
   {
     switch ( addr & 0xF000 )

@@ -47,10 +47,7 @@
     }
   }
 
-  /**
-   * Returns a pixel from a tile in the tile data
-   * table
-   */
+  
   function get_tile_pixel( tile, l, c, base )
   {
     var b0, b1, idx, pix;

@@ -31,9 +31,7 @@
     emu.update_divider( );
   }
 
-  /**
-   * Returns the timer counter
-   */
+  
   emu.update_counter = function( )
   {
     var cycles = 0;
@@ -65,9 +63,7 @@
     }
   }
 
-  /**
-   * Updates the divider register
-   */
+  
   emu.update_divider = function( )
   {
     while ( emu.divider_cycles >= 256 ) {

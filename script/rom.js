@@ -1,8 +1,6 @@
 ( function( emu )
 {
-  /**
-   * Extracts information from a cartridge
-   */
+  
   emu.ROM = function( data )
   {
     if ( !data ) {

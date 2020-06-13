@@ -17,9 +17,7 @@
   emu.key_up           = false;
   emu.key_down         = false;
 
-  /**
-   * Loads a rom file
-   */
+  
   emu.load_rom = function( file )
   {
     var req;
@@ -37,9 +35,7 @@
     req.send( );
   }
 
-  /**
-   * Main loop
-   */
+  
   emu.loop = function( )
   {
     emu.wait = false;
@@ -57,14 +53,10 @@
     }
   }
 
-  /**
-   * UI init
-   */
+  
   $( function( )
   {
-    /**
-     * Starts the emulator
-     */
+    
     $( "#btn-start" ).on( 'click', function( )
     {
       if ( emu.stopped )
@@ -74,17 +66,13 @@
       }
     } );
 
-    /**
-     * Stops the emulator
-     */
+    
     $( "#btn-stop" ).on( 'click', function( )
     {
       emu.stopped = true;
     } );
 
-    /**
-     * Loads a rom into the emulator
-     */
+    
     $( "#btn-rom" ).on( 'change', function( evt )
     {
       var files, file, r, ctnt;
@@ -110,9 +98,7 @@
       r.readAsArrayBuffer( file );
     } );
 
-    /**
-     * Handles keyboard input ( key press )
-     */
+    
     $( document ).on( 'keydown', function( evt )
     {
       switch ( evt.keyCode )
@@ -134,9 +120,7 @@
       }
     } );
 
-    /**
-     * Handles keyboard input ( key release )
-     */
+    
     $( document ).on( 'keyup', function( evt )
     {
       switch ( evt.keyCode )
@@ -168,7 +152,6 @@
     emu.ctx_data = emu.ctx.getImageData( 0, 0, 160, 144 );
     emu.vram = emu.ctx_data.data;
 
-    // Load the rom
-    //emu.load_rom( 'pb.gb' );
+    
   } );
 } ) ( this.emu = this.emu || { } );
